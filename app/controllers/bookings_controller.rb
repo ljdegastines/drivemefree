@@ -1,4 +1,4 @@
-class MotorcycleController < ApplicationController
+class BookingsController < ApplicationController
   def index
   end
 
