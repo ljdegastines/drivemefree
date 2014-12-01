@@ -11,24 +11,89 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141201135311) do
+ActiveRecord::Schema.define(version: 20141201145128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "availabilities", force: true do |t|
+    t.integer  "motorcycle_id"
+    t.date     "date"
+    t.boolean  "is_available"
+    t.integer  "price"
+    t.string   "currency"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "availabilities", ["motorcycle_id"], name: "index_availabilities_on_motorcycle_id", using: :btree
+
+  create_table "bookings", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "motorcycle_id"
+    t.date     "pickup_date"
+    t.time     "pickup_time"
+    t.date     "return_date"
+    t.time     "return_time"
+    t.integer  "total_price"
+    t.integer  "rating_motorcycle"
+    t.text     "review_motorcycle"
+    t.integer  "rating_user"
+    t.text     "review_user"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bookings", ["motorcycle_id"], name: "index_bookings_on_motorcycle_id", using: :btree
+  add_index "bookings", ["user_id"], name: "index_bookings_on_user_id", using: :btree
+
+  create_table "motorcycles", force: true do |t|
+    t.integer  "user_id"
+    t.string   "manufacturer"
+    t.string   "model"
+    t.string   "type"
+    t.integer  "production_year"
+    t.integer  "engine_size"
+    t.string   "engine_type"
+    t.integer  "horsepower"
+    t.string   "license_plate"
+    t.text     "description"
+    t.string   "pickup_address"
+    t.integer  "longitude"
+    t.integer  "latitude"
+    t.integer  "autonomy_km"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "motorcycles", ["user_id"], name: "index_motorcycles_on_user_id", using: :btree
+
+  create_table "photos", force: true do |t|
+    t.integer  "motorcycle_id"
+    t.string   "name"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "photos", ["motorcycle_id"], name: "index_photos_on_motorcycle_id", using: :btree
+
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                              null: false
+    t.string   "encrypted_password",                 null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.date     "birthday"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
