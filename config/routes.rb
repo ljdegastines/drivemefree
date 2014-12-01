@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root to: "motorcycles#index"
+
   devise_for :users
 
   resources :users, only: [:show]
