@@ -1,10 +1,19 @@
 Rails.application.routes.draw do
 
-  resources :users, only: [:show, :new, :create, :edit, :update, :destroy]
-  resources :motorcycles
-  resources :bookings
+  root to: "motorcycles#index"
 
   devise_for :users
+
+  resources :users, only: [:show]
+
+  resources :motorcycles do
+    resources :bookings, only: [:new, :create]
+  end
+
+  resources :bookings, only: [:index, :show, :edit, :update] do
+    resources :comments, only: [:create, :destroy]
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
