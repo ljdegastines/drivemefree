@@ -16,6 +16,8 @@
   <li>Description : <%= @motorcycle.description %></li>
 </ul>
 
-<%= link_to 'Revenir à la liste', motorcycles_path  %>
-
-<%= link_to 'Modifier cette moto', edit_motorcycle_path %>
+<ul>
+  <li><%= link_to 'Back to the list', motorcycles_path  %></li>
+  <li><%= link_to 'Modify this motorcycle', edit_motorcycle_path %></li>
+  <li><%= link_to "Delete this motorcycle", @motorcycle, method: :delete %></li>
+</ul>
