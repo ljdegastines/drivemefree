@@ -1,7 +1,16 @@
-<h1>Les motos disponibles !</h1>
-
-<ul>
-  <% @motorcycles.each do |motorcycle| %>
-    <li><%= link_to motorcycle.model, motorcycle_path(motorcycle) %></li>
-  <% end %>
-</ul>
+<div class="wrapper">
+  <div class="container">
+    <div class="col-xs-6 black-overlay">
+      <h2>Les motos disponibles !</h2>
+      <ul>
+        <% @motorcycles.each do |motorcycle| %>
+        <div class="vignette-search col-xs-3"><%= link_to "Picture", motorcycle_path(motorcycle) %></div>
+        <div class="vignette-search col-xs-9"><%= link_to motorcycle.model, motorcycle_path(motorcycle) %></div>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-xs-6">
+      <img src="http://lorempixel.com/g/430/500" alt="">
+    </div>
+  </div>
+</div>
