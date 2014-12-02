@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20141202103448) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "motorcycles", force: true do |t|
-    t.integer  "owner_id"
+    t.integer  "user_id"
     t.string   "manufacturer"
     t.string   "model"
     t.integer  "production_year"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 20141202103448) do
     t.string   "style"
   end
 
-  add_index "motorcycles", ["owner_id"], name: "index_motorcycles_on_owner_id", using: :btree
+  add_index "motorcycles", ["user_id"], name: "index_motorcycles_on_user_id", using: :btree
 
   create_table "photos", force: true do |t|
     t.integer  "motorcycle_id"
@@ -105,6 +105,12 @@ ActiveRecord::Schema.define(version: 20141202103448) do
     t.string   "first_name"
     t.string   "last_name"
     t.date     "birthday"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "picture"
+    t.string   "name"
+    t.string   "token"
+    t.datetime "token_expiry"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
