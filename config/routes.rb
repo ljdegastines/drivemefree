@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   root to: "motorcycles#index"
 
-  devise_for :users
+  Rails.application.routes.draw do
+    devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+  end
 
   resources :users, only: [:show]
 
