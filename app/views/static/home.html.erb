@@ -1,0 +1,34 @@
+<div class="search-area text-center">
+  <div class="page-container page-container-responsive row-full-height">
+    <div class="intro-area row row-table row-full-height">
+      <div class="col-12 col-middle">
+        <h1 id="tagline" class="uppercase text-jumbo text-contrast row-space-1">Come on and ride!</h1>
+        <div id="subtitle" class="h4 text-contrast row-space-4">
+          Rent unique motorcycles all across Europe.
+        </div>
+      </div>
+      <div class="bottom-search-area">
+        <div class="col-12">
+          <form action="/s" id="search_form">
+            <div class="manufacturer-wrapper">
+              <input type="text" class="form-inline manufacturer input-large input-contrast" autocomplete="off" id="manufacturer" name="manufacturer" placeholder="What is your dream motorcycle brand?">
+              <p id="enter_manufacturer_error_message" class="bad hide">
+                Please set manufacturer
+              </p>
+              <input type="text" class="form-inline model input-large input-contrast" autocomplete="off" id="model" name="model" placeholder="What is your dream model?">
+              <p id="enter_model_error_message" class="bad hide">
+                Please set model
+              </p>
+            </div>
+            <input type="text" id="checkin" class="form-inline checkin search-option input-large input-contrast ui-datepicker-target" name="checkin" placeholder="Check In">
+            <input type="text" id="checkout" class="form-inline checkout search-option input-large input-contrast ui-datepicker-target" name="checkout" placeholder="Check Out">
+            <input type="hidden" name="source" value="bb">
+            <button type="submit" class="search-button form-inline btn btn-primary btn-large" id="submit_manufacturer">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
