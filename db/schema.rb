@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20141201224901) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "motorcycles", force: true do |t|
-    t.integer  "user_id"
+    t.integer  "owner_id"
     t.string   "manufacturer"
     t.string   "model"
     t.string   "type"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 20141201224901) do
     t.datetime "updated_at"
   end
 
-  add_index "motorcycles", ["user_id"], name: "index_motorcycles_on_user_id", using: :btree
+  add_index "motorcycles", ["owner_id"], name: "index_motorcycles_on_owner_id", using: :btree
 
   create_table "photos", force: true do |t|
     t.integer  "motorcycle_id"
