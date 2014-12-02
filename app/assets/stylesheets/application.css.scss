@@ -1,4 +1,14 @@
-// Bootstrap over-ride FIRST
+// Bootstrap over-ride with sass variable http://getbootstrap.com/customize/#less-variables
+
+
+// SCSS files installed with gems
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Your SCSS files
+@import "navbar";
+
 
 .wrapper {
   background-image: url(http://splitshire.com/wp-content/uploads/2014/08/SplitShire_IMG_9655-2-800x500.jpg);
@@ -18,28 +28,8 @@
 }
 
 .black-left {
-  color: white;
+  color: grey;
   background-color: rgba(34, 35, 40, 0.4);
   text-align: left;
   padding: 0px 20px 30px 20px;
 }
-
-.navbar-brand {
-  fill: red;
-  padding: 0px;
-  margin: 0px;
-}
-
-#logo {
-  height: 100%;
-  margin: 0px 0px 0px 0px;
-}
-
-// SCSS files installed with gems
-@import "bootstrap";
-@import "font-awesome-sprockets";
-@import "font-awesome";
-
-// Your SCSS files
-@import "navbar"
-
