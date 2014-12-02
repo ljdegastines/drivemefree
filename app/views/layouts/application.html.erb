@@ -11,19 +11,15 @@
   </head>
   <body>
 
-
-
-    <%= render 'shared/notices' %>
-
-
-    <%= render 'layouts/sessions' %> <!-- To be included in the navbar -->
-
     <!-- Navbar -->
     <%= render "shared/navbar" %>
 
-
-
-    <%= yield %>
+    <div class="wrapper">
+      <div class="container">
+        <%= render 'shared/notices' %>
+        <%= yield %>
+      </div>
+    </div>
 
 
     <!-- Footer -->
