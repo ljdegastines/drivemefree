@@ -1,6 +1,5 @@
 // Bootstrap over-ride with sass variable http://getbootstrap.com/customize/#less-variables
 
-
 // SCSS files installed with gems
 @import "bootstrap";
 @import "font-awesome-sprockets";
@@ -8,28 +7,4 @@
 
 // Your SCSS files
 @import "navbar";
-
-
-.wrapper {
-  background-image: url('/assets/background.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  height: 85%;
-  width: 100%;
-  text-align: center;
-  color: white;
-  position: absolute;
-  top: 0px;
-}
-
-.container {
-  margin-top: 190px;
-}
-
-.black-left {
-  color: grey;
-  background-color: rgba(34, 35, 40, 0.4);
-  text-align: left;
-  padding: 0px 20px 30px 20px;
-}
+@import "home";

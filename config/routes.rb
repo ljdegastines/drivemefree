@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  root to: "motorcycles#index"
+  get 'static/home'
+
+  get 'static/about'
+
+  root to: "static#home"
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
 
