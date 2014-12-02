@@ -1,0 +1,15 @@
+<%= simple_form_for @motorcycle do |f| %>
+  <%= f.input :manufacturer %>
+  <%= f.input :model %>
+  <%= f.input :style %>
+  <%= f.input :production_year %>
+  <%= f.input :engine_size %>
+  <%= f.input :engine_type %>
+  <%= f.input :horsepower %>
+  <%= f.input :license_plate %>
+  <%= f.input :description %>
+  <%= f.input :pickup_address %>
+  <%= f.input :autonomy_km %>
+
+  <%= f.button :submit %>
+<% end %>

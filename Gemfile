@@ -3,6 +3,13 @@ source 'https://rubygems.org'
 # sign up / in
 gem "devise"
 
+# facebook connect
+gem "omniauth-facebook"
+gem "koala"
+
+# manages API keys
+gem "figaro"
+
 # design
 gem 'bootstrap_form'
 gem 'bootstrap-sass', '~> 3.3.1'

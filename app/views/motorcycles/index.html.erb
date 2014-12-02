@@ -1,0 +1,7 @@
+<h1>Les motos disponibles !</h1>
+
+<ul>
+  <% @motorcycles.each do |motorcycle| %>
+    <li><%= link_to motorcycle.model, motorcycle_path(motorcycle) %></li>
+  <% end %>
+</ul>

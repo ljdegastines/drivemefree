@@ -1,0 +1,10 @@
+// Bootstrap over-ride with sass variable http://getbootstrap.com/customize/#less-variables
+
+// SCSS files installed with gems
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Your SCSS files
+@import "navbar";
+@import "home";
