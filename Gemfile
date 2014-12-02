@@ -1,7 +1,17 @@
 source 'https://rubygems.org'
 
+ruby '2.1.2'
+gem 'rails_12factor', group: :production
+
 # sign up / in
 gem "devise"
+
+# facebook connect
+gem "omniauth-facebook"
+gem "koala"
+
+# manages API keys
+gem "figaro"
 
 # design
 gem 'bootstrap_form'

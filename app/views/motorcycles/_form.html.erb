@@ -1,8 +1,6 @@
-<<<<<<< Updated upstream
-<%= simple_form_for @motorcycle do |f| %>
-=======
+
 <%= simple_form_for @motorcycle , html: {class: "horizontal-form"} do |f| %>
->>>>>>> Stashed changes
+
   <%= f.input :manufacturer %>
   <%= f.input :model %>
   <%= f.input :style %>
@@ -15,5 +13,5 @@
   <%= f.input :pickup_address %>
   <%= f.input :autonomy_km %>
 
-  <%= f.button :submit %>
+  <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
