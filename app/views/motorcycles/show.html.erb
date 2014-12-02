@@ -1,2 +1,21 @@
-<h1>Motorcycle#show</h1>
-<p>Find me in app/views/motorcycle/show.html.erb</p>
+<h2><%= @motorcycle.manufacturer %>, <%= @motorcycle.model %></h2>
+
+<ul>
+  <li>Manufacturer :<%= @motorcycle.manufacturer %></li>
+  <li>Model : <%= @motorcycle.model %></li>
+  <li>Style : <%= @motorcycle.style %></li>
+  <li>production_year : <%= @motorcycle.production_year %></li>
+  <li>Engine size :<%= @motorcycle.engine_size %></li>
+  <li>Engine type : <%= @motorcycle.engine_type %></li>
+  <li>Horsepower : <%= @motorcycle.horsepower %></li>
+  <li>License plate :<%= @motorcycle.license_plate %></li>
+  <li>Pickup address : <%= @motorcycle.pickup_address %></li>
+  <li>Longitude : <%= @motorcycle.longitude %></li>
+  <li>Latitude : <%= @motorcycle.latitude %></li>
+  <li>Autonomy (km) : <%= @motorcycle.autonomy_km %></li>
+  <li>Description : <%= @motorcycle.description %></li>
+</ul>
+
+<%= link_to 'Revenir à la liste', motorcycles_path  %>
+
+<%= link_to 'Modifier cette moto', edit_motorcycle_path %>

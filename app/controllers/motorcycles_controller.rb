@@ -1,6 +1,6 @@
 class MotorcyclesController < ApplicationController
   def index
-    @motorcycle = Motorcycle.all
+    @motorcycles = Motorcycle.all
   end
 
   def show
@@ -21,9 +21,15 @@ class MotorcyclesController < ApplicationController
   end
 
   def edit
+    @motorcycle = Motorcycle.find(params[:id])
   end
 
   def update
+    @motorcycle = Motorcycle.find(params[:id])
+
+    @motorcycle.update(motorcycle_params)
+
+    redirect_to motorcycle_path(@motorcycle)
   end
 
   def destroy
@@ -32,6 +38,6 @@ class MotorcyclesController < ApplicationController
   private
 
   def motorcycle_params
-    params.require(:motorcycle).permit(:manufacturer, :model, :type, :production_year, :engine_size, :engine_type, :horsepower, :licence_plate, :descritpion, :pickup_address, :longitude, :latitude, :autonomy_km)
+    params.require(:motorcycle).permit(:manufacturer, :model, :style, :production_year, :engine_size, :engine_type, :horsepower, :license_plate, :description, :pickup_address, :longitude, :latitude, :autonomy_km)
   end
 end
