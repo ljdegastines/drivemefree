@@ -1,9 +1,11 @@
-<% @motorcycles.each do |motorcycle| %>
-  <%= link_to motorcycle_path(motorcycle) do %>
-    <div class="vignette-search col-xs-12 col-md-12 col-lg-6">
-      <%= image_tag motorcycle.picture.url(), class:'img-responsive' %></br>
-      <%= link_to (motorcycle.manufacturer + " - " + motorcycle.model + " from " + motorcycle.production_year.to_s), motorcycle_path(motorcycle) %></br>
-      <%= motorcycle.style + " of " + motorcycle.engine_size.to_s  + " cm3 - " + motorcycle.pickup_address %>
+<div class="row">
+  <% @motorcycles.each do |motorcycle| %>
+    <div class="col-xs-12 col-sm-6">
+      <div class="vignette">
+        <%= image_tag motorcycle.picture.url(), class:'img-responsive' %></br>
+        <%= link_to (motorcycle.manufacturer + " - " + motorcycle.model + " from " + motorcycle.production_year.to_s), motorcycle_path(motorcycle) %></br>
+        <%= motorcycle.style + " of " + motorcycle.engine_size.to_s  + " cm3 - " + motorcycle.pickup_address %>
+      </div>
     </div>
   <% end %>
-<% end %>
+</div>

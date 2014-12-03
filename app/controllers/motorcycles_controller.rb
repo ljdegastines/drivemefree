@@ -2,7 +2,11 @@ class MotorcyclesController < ApplicationController
   before_action :get_motorcycle, only: [:show, :edit, :update, :destroy]
 
   def index
-    @motorcycles = Motorcycle.all
+    if params = {}
+      @motorcycles = Motorcycle.all
+    else
+      @motorcycles = Motorcycle.where(params)
+    end
   end
 
   def show
