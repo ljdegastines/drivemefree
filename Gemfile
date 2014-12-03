@@ -17,6 +17,7 @@ gem "figaro"
 gem 'bootstrap_form'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'font-awesome-sass', '~> 4.2.0'
+gem 'bootstrap-datepicker-rails'
 
 # debugging
 group :development do
