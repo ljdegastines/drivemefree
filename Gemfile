@@ -1,7 +1,17 @@
 source 'https://rubygems.org'
 
+ruby '2.1.2'
+gem 'rails_12factor', group: :production
+
 # sign up / in
 gem "devise"
+
+# facebook connect
+gem "omniauth-facebook"
+gem "koala"
+
+# manages API keys
+gem "figaro"
 
 # design
 gem 'bootstrap_form'
@@ -40,6 +50,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
