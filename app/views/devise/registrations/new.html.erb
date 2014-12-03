@@ -1,20 +1,30 @@
-<h2>Sign up</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+      <div class="center-form">
+        <h2>Sign up</h2>
 
-  <div class="form-inputs">
-    <%= f.input :first_name, as: :string, required: true, autofocus: true %>
-    <%= f.input :last_name, as: :string, required: true %>
-    <%= f.input :birthday, as: :date, required: true %>
-    <%= f.input :email, required: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
-    <%= f.input :password_confirmation, required: true %>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.input :first_name, as: :string, required: true, autofocus: true, placeholder: 'First name' %>
+            <%= f.input :last_name, as: :string, required: true, placeholder: 'Last name' %>
+            <%= f.input :birthday, as: :string, start_year: Time.now.year - 90, end_year: Time.now.year - 8, order: [:day, :month, :year], required: true, placeholder: 'dd/mm/yyyy' %>
+            <%= f.input :email, required: true, placeholder: 'Your email' %>
+            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable), placeholder: 'Your password'%>
+            <%= f.input :password_confirmation, required: true, placeholder: 'Your password' %>
+          </div>
+
+          <div class="form-actions text-center">
+            <%= f.button :submit, "Sign me up!", class: "btn btn-primary btn-lg" %>
+          </div>
+        <% end %>
+
+      </div>
+
+    </div>
   </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up", class: "btn btn-primary" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
