@@ -1,0 +1,9 @@
+<h1>PHOTO # NEW</h1>
+
+
+<%= simple_form_for @photo, url: motorcycle_photos_path , html: {class: "horizontal-form"} do |f| %>
+
+  <%= f.input :picture %>
+
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>

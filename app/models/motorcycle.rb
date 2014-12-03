@@ -1,5 +1,6 @@
 class Motorcycle < ActiveRecord::Base
   belongs_to :owner, class_name: "User"
+  has_many :photos
 
   MANUFACTURERS = %w(BMW Guzzi Triumph Ducati)
   STYLES = %w(Roadster Trail Supermotard Trial Custom Sport)
