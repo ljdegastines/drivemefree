@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get "profile", to: "users/profile#show"
 
+  get 'motorcycles/search', as: 'motorcycles_search'
+
   resources :motorcycles do
     resources :bookings, only: [:new, :create]
   end

@@ -36,14 +36,21 @@ class MotorcyclesController < ApplicationController
     redirect_to motorcycles_path
   end
 
+  def search
+    @motorcycles = Motorcycle.where(search_params.reject{|_, v| v.blank?})
+  end
 
   private
 
   def get_motorcycle
-  @motorcycle = Motorcycle.find(params[:id])
+    @motorcycle = Motorcycle.find(params[:id])
   end
 
   def motorcycle_params
     params.require(:motorcycle).permit(:manufacturer, :model, :style, :production_year, :engine_size, :engine_type, :horsepower, :license_plate, :description, :pickup_address, :longitude, :latitude, :autonomy_km, :picture)
+  end
+
+  def search_params
+    params.permit(:manufacturer, :model, :style, :production_year, :engine_size, :engine_type, :horsepower, :license_plate, :description, :pickup_address, :longitude, :latitude, :autonomy_km, :picture)
   end
 end

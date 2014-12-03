@@ -4,12 +4,15 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "jquery-ui";
 
 // Your SCSS files
 @import "navbar";
 @import "home";
 @import "footer";
+@import "search";
 
 body {
   margin-top: 60px;
+  background: #F0F1F5;
 }
