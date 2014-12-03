@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :motorcycles do
     resources :bookings, only: [:new, :create]
+     resources :photos, only: [:new, :create]
   end
 
   resources :bookings, only: [:index, :show, :edit, :update] do

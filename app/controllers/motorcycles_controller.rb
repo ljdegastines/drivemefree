@@ -40,7 +40,7 @@ class MotorcyclesController < ApplicationController
   private
 
   def get_motorcycle
-  @motorcycle = Motorcycle.find(params[:id])
+    @motorcycle = Motorcycle.find(params[:id])
   end
 
   def motorcycle_params

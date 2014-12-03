@@ -1,7 +1,11 @@
 <h2><%= @motorcycle.manufacturer %>, <%= @motorcycle.model %></h2>
 
+
+<% @motorcycle.photos.each do |photo| %>
+  <%= image_tag photo.picture.url(:medium) %>
+<% end %>
+
 <ul>
-  <%= image_tag @motorcycle.picture.url(:medium) %>
   <li>Manufacturer :<%= @motorcycle.manufacturer %></li>
   <li>Model : <%= @motorcycle.model %></li>
   <li>Style : <%= @motorcycle.style %></li>
@@ -18,6 +22,7 @@
 </ul>
 
 <ul>
+  <li><%= link_to 'Add photo to this motorcycle', new_motorcycle_photo_path(@motorcycle) %></li>
   <li><%= link_to 'Back to the list', motorcycles_path  %></li>
   <li><%= link_to 'Modify this motorcycle', edit_motorcycle_path %></li>
   <li><%= link_to "Delete this motorcycle", @motorcycle, method: :delete %></li>
