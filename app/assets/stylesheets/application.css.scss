@@ -1,45 +1,17 @@
-// Bootstrap over-ride FIRST
 
-.wrapper {
-  background-image: url('/assets/background.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  height: 85%;
-  width: 100%;
-  text-align: center;
-  color: white;
-  position: absolute;
-  top: 0px;
-}
+// Bootstrap over-ride with sass variable http://getbootstrap.com/customize/#less-variables
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
 
-.container {
-  margin-top: 190px;
-}
-
-.black-left {
-  color: white;
-  background-color: rgba(34, 35, 40, 0.4);
-  text-align: left;
-  padding: 0px 20px 30px 20px;
-}
-
-.navbar-brand {
-  fill: red;
-  padding: 0px;
-  margin: 0px;
-}
-
-#logo {
-  height: 100%;
-  margin: 0px 0px 0px 0px;
-}
+$font-family-sans-serif: 'Open Sans', sans-serif;
 
 // SCSS files installed with gems
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "jquery-ui";
+@import "bootstrap-datepicker3";
 
 // Your SCSS files
-@import "navbar"
+@import "navbar";
+@import "footer";
 
