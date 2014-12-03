@@ -1,6 +1,7 @@
 <h2><%= @motorcycle.manufacturer %>, <%= @motorcycle.model %></h2>
 
 <ul>
+  <%= image_tag @motorcycle.picture.url(:medium) %>
   <li>Manufacturer :<%= @motorcycle.manufacturer %></li>
   <li>Model : <%= @motorcycle.model %></li>
   <li>Style : <%= @motorcycle.style %></li>
