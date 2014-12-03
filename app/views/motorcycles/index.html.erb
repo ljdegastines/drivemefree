@@ -1,16 +1,31 @@
-<div class="wrapper">
+<div class="">
   <div class="container">
-    <div class="col-xs-6 black-overlay">
+    <div class="col-xs-7">
       <h2>Les motos disponibles !</h2>
-      <ul>
-        <% @motorcycles.each do |motorcycle| %>
-        <div class="vignette-search col-xs-3"><%= link_to "Picture", motorcycle_path(motorcycle) %></div>
-        <div class="vignette-search col-xs-9"><%= link_to motorcycle.model, motorcycle_path(motorcycle) %></div>
-        <% end %>
-      </ul>
+
+
+      <%= simple_form_for(motorcycles_path, class:'form-inline') do |f| %>
+        <%= f.input :manufacturer, placeholder: 'Manufacturer' %>
+        <%= f.input :model, placeholder: 'Model' %>
+        <%= f.button :submit %>
+      <% end %>
+
+
+      <%= render 'vignettes' %>
     </div>
-    <div class="col-xs-6">
-      <img src="http://lorempixel.com/g/430/500" alt="">
+    <div class="col-xs-5">
+      <iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=25%20Rue%20du%20Petit%20Musc%2C%20Paris%2C%20France&key=AIzaSyDlv_mtTgo93cPrHAfeO3CK_B4HWTHueEc"></iframe>
     </div>
   </div>
 </div>
+
+<!-- <div class="">
+  <iframe align="right" width="40%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=25%20Rue%20du%20Petit%20Musc%2C%20Paris%2C%20France&key=AIzaSyDlv_mtTgo93cPrHAfeO3CK_B4HWTHueEc"></iframe>
+  <div width="60%">
+    <div class="col-xs-12">
+      <h2>Les motos disponibles !</h2>
+      <%= render 'vignettes' %>
+    </div>
+  </div>
+</div>
+<div class="container"></div> -->
