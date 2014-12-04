@@ -11,19 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141204151004) do
+
+ActiveRecord::Schema.define(version: 20141204134710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "availabilities", force: true do |t|
     t.integer  "motorcycle_id"
-    t.date     "date"
-    t.boolean  "is_available"
-    t.integer  "price"
-    t.string   "currency"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "start_date"
+    t.date     "end_date"
   end
 
   add_index "availabilities", ["motorcycle_id"], name: "index_availabilities_on_motorcycle_id", using: :btree
@@ -59,7 +58,7 @@ ActiveRecord::Schema.define(version: 20141204151004) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "motorcycles", force: true do |t|
-    t.integer  "owner_id"
+    t.integer  "user_id"
     t.string   "manufacturer"
     t.string   "model"
     t.integer  "production_year"
@@ -80,7 +79,7 @@ ActiveRecord::Schema.define(version: 20141204151004) do
     t.float    "longitude"
   end
 
-  add_index "motorcycles", ["owner_id"], name: "index_motorcycles_on_owner_id", using: :btree
+  add_index "motorcycles", ["user_id"], name: "index_motorcycles_on_user_id", using: :btree
 
   create_table "photos", force: true do |t|
     t.integer  "motorcycle_id"

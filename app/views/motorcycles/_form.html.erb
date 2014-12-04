@@ -1,9 +1,9 @@
 
 <%= simple_form_for @motorcycle , html: {class: "horizontal-form"} do |f| %>
 
-  <%= f.input :manufacturer %>
+  <%= f.input :manufacturer, collection: Motorcycle::MANUFACTURERS %>
   <%= f.input :model %>
-  <%= f.input :style %>
+  <%= f.input :style, collection: Motorcycle::STYLES %>
   <%= f.input :production_year %>
   <%= f.input :engine_size %>
   <%= f.input :engine_type %>
@@ -11,7 +11,10 @@
   <%= f.input :license_plate %>
   <%= f.input :description %>
   <%= f.input :pickup_address %>
+  <%= f.input :city %>
+  <%= f.input :zip_code %>
   <%= f.input :autonomy_km %>
+  <%= f.input :price_per_day %>
 
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>

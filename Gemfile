@@ -7,6 +7,9 @@ gem 'rails_12factor', group: :production
 # sign up / in
 gem "devise"
 
+# mailer opener development
+gem "letter_opener", group: :development
+
 # facebook connect
 gem "omniauth-facebook"
 gem "koala"
