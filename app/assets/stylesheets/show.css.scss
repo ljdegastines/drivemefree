@@ -25,9 +25,33 @@
     background-color: #FBFBFB;
     color: black;
     -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
-    margin-bottom: 10px;
     padding: 15px;
     border-radius: 5px;
+  }
+
+  .border-darkgrey {
+    border: 1px solid #2F2F2F;
+  }
+
+  .booking-title {
+    background-color: #2F2F2F;
+    color: white;
+    font-style: bold;
+    font-size: 1.3em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+  }
+
+  .booking-content {
+    text-align: center;
+  }
+
+  .booking-send {
+    #nav-btn {
+      line-height: 40px;
+      font-size: 1em;
+    }
   }
 
 }
