@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  after_create :send_welcome_email
+
   devise :omniauthable, :omniauth_providers => [ :facebook ]
 
   def self.find_for_facebook_oauth(auth)
@@ -17,6 +19,12 @@ class User < ActiveRecord::Base
       user.token = auth.credentials.token
       user.token_expiry = Time.at(auth.credentials.expires_at)
     end
+  end
+
+  private
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver
   end
 
 end
