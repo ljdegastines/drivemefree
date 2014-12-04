@@ -27,3 +27,12 @@
   <li><%= link_to 'Modify this motorcycle', edit_motorcycle_path %></li>
   <li><%= link_to "Delete this motorcycle", @motorcycle, method: :delete %></li>
 </ul>
+
+<% content_for(:js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var coord = <%= raw @motorcycle_coordinates %>;
+      alert('Motorcycle coordinates are ' + coord.lat + ', ' + coord.lng);
+    });
+  <% end %>
+<% end %>
