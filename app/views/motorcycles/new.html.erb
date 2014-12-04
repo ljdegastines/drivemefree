@@ -5,11 +5,12 @@
 
         <h2>New Motorcycle</h2>
 
-        <%= simple_form_for @motorcycle , html: {class: "horizontal-form"} do |f| %>
+        <%= simple_form_for @motorcycle do |f| %>
 
-          <%= f.input :manufacturer %>
+
           <%= f.input :model %>
-          <%= f.input :style %>
+          <%= f.select :manufacturer, collection: Motorcycle::MANUFACTURERS %>
+          <%= f.select :style, collection: Motorcycle::STYLES %>
           <%= f.input :production_year %>
           <%= f.input :engine_size %>
           <%= f.input :engine_type %>
