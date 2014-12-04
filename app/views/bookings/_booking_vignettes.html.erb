@@ -1,0 +1,16 @@
+<div class="row">
+  <% @bookings.each do |booking| %>
+    <div class="col-xs-12 col-sm-6">
+      <div class="vignette">
+        <% unless booking.motorcycle.photos.empty? %>
+          <%= image_tag booking.photos.first.picture.url(:medium), class:'img-responsive' %>
+        <% end %>
+        </br>
+        <%= link_to (booking), booking_path(booking) %></br>
+        <%= booking.motorcycle.manufacturer + " - " + booking.motorcycle.model + " from " + booking.motorcycle.production_year.to_s %></br>
+        <%= "Pickup motorcycle at " + booking.motorcycle.address + ", " + booking.motorcycle.city + " on " + booking.pickup_date.to_s + " and hand it back on the " + booking.return_date.to_s %></br>
+        <%= booking.motorcycle.price.to_s + " need to compute total price manually" %>
+      </div>
+    </div>
+  <% end %>
+</div>
