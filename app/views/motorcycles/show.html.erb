@@ -1,29 +1,135 @@
-<h2><%= @motorcycle.manufacturer %>, <%= @motorcycle.model %></h2>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-10 col-md-offset-1">
 
+      <div class="center-form">
 
-<% @motorcycle.photos.each do |photo| %>
-  <%= image_tag photo.picture.url(:medium) %>
-<% end %>
+        <h2><%= @motorcycle.manufacturer %>, <%= @motorcycle.model %></h2>
 
-<ul>
-  <li>Manufacturer :<%= @motorcycle.manufacturer %></li>
-  <li>Model : <%= @motorcycle.model %></li>
-  <li>Style : <%= @motorcycle.style %></li>
-  <li>production_year : <%= @motorcycle.production_year %></li>
-  <li>Engine size :<%= @motorcycle.engine_size %></li>
-  <li>Engine type : <%= @motorcycle.engine_type %></li>
-  <li>Horsepower : <%= @motorcycle.horsepower %></li>
-  <li>License plate :<%= @motorcycle.license_plate %></li>
-  <li>Pickup address : <%= @motorcycle.pickup_address %></li>
-  <li>Longitude : <%= @motorcycle.longitude %></li>
-  <li>Latitude : <%= @motorcycle.latitude %></li>
-  <li>Autonomy (km) : <%= @motorcycle.autonomy_km %></li>
-  <li>Description : <%= @motorcycle.description %></li>
-</ul>
+        <div class="show-div show-photos">
+          <% @motorcycle.photos.each do |photo| %>
+            <%= image_tag photo.picture.url(:medium) %>
+          <% end %>
+        </div>
 
-<ul>
-  <li><%= link_to 'Add photo to this motorcycle', new_motorcycle_photo_path(@motorcycle) %></li>
-  <li><%= link_to 'Back to the list', motorcycles_path  %></li>
-  <li><%= link_to 'Modify this motorcycle', edit_motorcycle_path %></li>
-  <li><%= link_to "Delete this motorcycle", @motorcycle, method: :delete %></li>
-</ul>
+        <div class="show-div show-user-booking">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-8">
+              <div class="row text-center">
+                <div class="col-xs-6">
+                  photo</br>prénom
+                </div>
+                <div class="col-xs-6">
+                  <%= @motorcycle.manufacturer %>, <%= @motorcycle.model %></br>
+                  ville
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4">
+              <div class="row booking-title">
+                <div class="col-xs-6 col-sm-6">
+
+                </div>
+              </div>
+              <div class="row booking-content">
+                <div class="col-xs-6 col-sm-6">
+                  <div class="row booking-form-header">
+                    <div class="col-xs-6 col-sm-6">
+
+                    </div>
+                  </div>
+                  <div class="row booking-form-fields">
+                    <div class="col-xs-6 col-sm-6">
+
+                    </div>
+                  </div>
+                  <div class="row booking-form-send">
+                    <div class="col-xs-6 col-sm-6">
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="show-div show-caracteristics">
+          <div class="text-center">
+            <h3>Characteristics</h3>
+          </div>
+          <div class="row text-center">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              Manufacturer: <strong><%= @motorcycle.manufacturer %></strong>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              Model: <strong><%= @motorcycle.model %></strong>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              Style: <strong><%= @motorcycle.style %></strong>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              Production year: <strong><%= @motorcycle.production_year %></strong>
+            </div>
+          </div>
+          <div class="row text-center">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              &nbsp
+            </div>
+          </div>
+          <div class="row text-center">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              Engine size: <strong><%= @motorcycle.engine_size %></strong>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              Engine type: <strong><%= @motorcycle.engine_type %></strong>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              Horsepower: <strong><%= @motorcycle.horsepower %></strong>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              Autonomy (km): <strong><%= @motorcycle.autonomy_km %></strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="show-div show-description">
+          <div class="text-center">
+            <h3>Description</h3>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              Description: <%= @motorcycle.description %>
+            </div>
+          </div>
+        </div>
+
+        <div class="show-div show-actions">
+          <div class="row">
+            <div class="col-xs-12">
+              <%= link_to 'Add photo', new_motorcycle_photo_path(@motorcycle) %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <%= link_to 'Edit', edit_motorcycle_path %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <%= link_to "Delete", @motorcycle, method: :delete %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <%= link_to 'Back', motorcycles_path  %>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+

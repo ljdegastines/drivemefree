@@ -11,17 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203095226) do
+ActiveRecord::Schema.define(version: 20141204100656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "availabilities", force: true do |t|
     t.integer  "motorcycle_id"
-    t.date     "date"
-    t.boolean  "is_available"
-    t.integer  "price"
-    t.string   "currency"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
