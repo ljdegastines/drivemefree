@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 ruby '2.1.2'
 gem 'rails_12factor', group: :production
@@ -15,6 +16,11 @@ gem "koala"
 
 # manages API keys
 gem "figaro"
+
+# geolocation
+gem "geocoder"
+gem "gmaps4rails"
+gem "rails-assets-underscore"
 
 # design
 gem 'bootstrap_form'

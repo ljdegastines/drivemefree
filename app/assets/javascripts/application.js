@@ -15,5 +15,6 @@
 //= require jquery-ui
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
-//= require turbolinks
+//= require underscore
+//= require gmaps/google
 //= require_tree .

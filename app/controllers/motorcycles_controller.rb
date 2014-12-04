@@ -3,9 +3,16 @@ class MotorcyclesController < ApplicationController
 
   def index
     @motorcycles = Motorcycle.all
+
+    @markers = Gmaps4rails.build_markers(@motorcycle) do |motorcycle, marker|
+      marker.lat motorcycle.latitude
+      marker.lng motorcycle.longitude
+    end
   end
 
   def show
+    @alert_message = "Check that #{@motorcycle.model} !"
+    @motorcycle_coordinates = { lat: @motorcycle.latitude, lng: @motorcycle.longitude }
     @booking = Booking.new
   end
 
