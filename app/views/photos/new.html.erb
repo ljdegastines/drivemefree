@@ -1,9 +1,20 @@
-<h1>PHOTO # NEW</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <div class="center-form">
 
+        <h2>New Photo</h2>
 
-<%= simple_form_for @photo, url: motorcycle_photos_path , html: {class: "horizontal-form"} do |f| %>
+        <%= simple_form_for @photo, url: motorcycle_photos_path , html: {class: "horizontal-form"} do |f| %>
 
-  <%= f.input :picture %>
+          <%= f.input :picture %>
 
-  <%= f.button :submit, class: "btn btn-primary" %>
-<% end %>
+          <div class="form-actions text-center">
+            <%= f.button :submit, 'Add a photo', class: "btn btn-primary btn-lg" %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
