@@ -24,8 +24,10 @@
 }
 
 .black-overlay {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(25,25,25,0.7);
   padding: 10px 20px 20px 20px;
+  border-radius: 5px;
+  border: 1px solid rgba(25,25,25,1);
 }
 
 .grey {
@@ -34,6 +36,7 @@
 
 h2 {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .input-daterange {
