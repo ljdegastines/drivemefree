@@ -77,6 +77,10 @@ ActiveRecord::Schema.define(version: 20141204134710) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.string   "city"
+    t.integer  "zip_code"
+    t.integer  "price_per_day"
+
   end
 
   add_index "motorcycles", ["user_id"], name: "index_motorcycles_on_user_id", using: :btree

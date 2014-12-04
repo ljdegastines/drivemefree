@@ -35,7 +35,8 @@
                 </div>
               </div>
               <div class="row booking-content">
-                <%= simple_form_for @booking, url: motorcycle_bookings_path(@motorcycle) do |f| %>
+                <%= simple_form_for [@booking], url: motorcycle_bookings_path(@motorcycle) do |f| %>
+                  <%= f.hidden_field :motorcycle_id, value: @motorcycle.id %>
                   <div class="col-xs-12 col-sm-12">
                     <div class="row booking-fields">
                       <div class="col-xs-6 col-sm-6">
