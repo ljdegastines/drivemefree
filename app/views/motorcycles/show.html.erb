@@ -14,11 +14,12 @@
   <li>Engine type : <%= @motorcycle.engine_type %></li>
   <li>Horsepower : <%= @motorcycle.horsepower %></li>
   <li>License plate :<%= @motorcycle.license_plate %></li>
-  <li>Pickup address : <%= @motorcycle.pickup_address %></li>
+  <li>Pickup address : <%= @motorcycle.pickup_address %>, <%= @motorcycle.city %> <%= @motorcycle.zip_code %></li>
   <li>Longitude : <%= @motorcycle.longitude %></li>
   <li>Latitude : <%= @motorcycle.latitude %></li>
   <li>Autonomy (km) : <%= @motorcycle.autonomy_km %></li>
   <li>Description : <%= @motorcycle.description %></li>
+  <li>Price : <%= @motorcycle.price_per_day %></li>
 </ul>
 
 <ul>
