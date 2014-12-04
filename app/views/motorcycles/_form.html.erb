@@ -1,9 +1,9 @@
 
 <%= simple_form_for @motorcycle , html: {class: "horizontal-form"} do |f| %>
 
-  <%= f.input :manufacturer %>
+  <%= f.input :manufacturer, collection: Motorcycle::MANUFACTURERS %>
   <%= f.input :model %>
-  <%= f.input :style %>
+  <%= f.input :style, collection: Motorcycle::STYLES %>
   <%= f.input :production_year %>
   <%= f.input :engine_size %>
   <%= f.input :engine_type %>
