@@ -11,10 +11,36 @@
   <%= f.input :license_plate %>
   <%= f.input :description %>
   <%= f.input :pickup_address %>
+
+<form>
+  <label>Address</label>
+  <input id="user_input_autocomplete_address" placeholder="Votre adresse...">
+  <label>street_number</label>
+  <input id="street_number" name="street_number" disabled>
+  <label>route</label>
+  <input id="route" name="route" disabled>
+  <label>locality</label>
+  <input id="locality" name="locality" disabled>
+  <label>country</label>
+  <input id="country" name="country" disabled>
+</form>
+
   <%= f.input :city %>
   <%= f.input :zip_code %>
   <%= f.input :autonomy_km %>
   <%= f.input :price_per_day %>
 
-  <%= f.button :submit, class: "btn btn-primary" %>
+  <div class="form-actions text-center">
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
 <% end %>
+
+<!-- Include Google Maps JS API -->
+<script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?libraries=places&key=PUT_YOUR_OWN_KEY_HERE">
+</script>
+
+<!-- Custom JS code to bind to Autocomplete API -->
+<!-- find it here: https://github.com/lewagon/google-place-autocomplete/blob/gh-pages/autocomplete.js -->
+<!-- We'll detail this file in the article -->
+<script type="text/javascript" src="autocomplete.js"></script>
