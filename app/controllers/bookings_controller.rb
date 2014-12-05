@@ -11,6 +11,8 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.total_price = (booking_params[:return_date].to_f - booking_params[:pickup_date].to_f) * @booking.motorcycle.price_per_day
+    @booking.user_id = current_user.id
     if @booking.save
       redirect_to bookings_path
     else
