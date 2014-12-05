@@ -47,11 +47,9 @@ class MotorcyclesController < ApplicationController
   end
 
   def search
-    if search_params[:start_date] < search_params[:end_date]
-      @motorcycles = Motorcycle.where(search_params.reject{|_, v| v.blank?})
-    else
-      redirect_to motorcycle_path(@motorcycle)
-    end
+
+    @motorcycles = Motorcycle.where(search_params.reject{|_, v| v.blank?})
+
   end
 
   private
