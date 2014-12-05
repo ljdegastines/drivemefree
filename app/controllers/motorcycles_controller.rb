@@ -51,6 +51,11 @@ class MotorcyclesController < ApplicationController
     @motorcycles = Motorcycle.where(search_params.reject{|_, v| v.blank?})
     search_params = {start_date: params[:start_date], end_date: params[:end_date]}
     session[:search_params] = search_params
+
+    @markers = Gmaps4rails.build_markers(@motorcycles) do |motorcycle, marker|
+      marker.lat motorcycle.latitude
+      marker.lng motorcycle.longitude
+    end
   end
 
 
