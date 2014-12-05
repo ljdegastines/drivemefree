@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20141204134710) do
+ActiveRecord::Schema.define(version: 20141204151004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,7 +57,7 @@ ActiveRecord::Schema.define(version: 20141204134710) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "motorcycles", force: true do |t|
-    t.integer  "user_id"
+    t.integer  "owner_id"
     t.string   "manufacturer"
     t.string   "model"
     t.integer  "production_year"
@@ -79,7 +78,7 @@ ActiveRecord::Schema.define(version: 20141204134710) do
     t.float    "longitude"
   end
 
-  add_index "motorcycles", ["user_id"], name: "index_motorcycles_on_user_id", using: :btree
+  add_index "motorcycles", ["owner_id"], name: "index_motorcycles_on_owner_id", using: :btree
 
   create_table "photos", force: true do |t|
     t.integer  "motorcycle_id"
