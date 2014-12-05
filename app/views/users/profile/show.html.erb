@@ -2,10 +2,9 @@
   <div class="container">
     <div class="row">
 
-      <div class="col-xs-12 col-md-8">
+      <div class="col-xs-12 col-md-12">
         <div class="row">
-          raise
-          <% @bookings.each do |booking| %>
+          <% Booking.where({user_id: current_user}).each do |booking| %>
             <div class="col-xs-12 col-sm-6">
               <div class="vignette">
                 <% unless booking.motorcycle.photos.empty? %>
@@ -14,7 +13,7 @@
                 </br>
                 <%= booking.motorcycle.manufacturer + " " + booking.motorcycle.model + ", " + booking.motorcycle.production_year.to_s %></br>
                 <%= "Pickup motorcycle at " + booking.motorcycle.pickup_address + ", " + booking.motorcycle.city + " on " + booking.pickup_date.to_s + " and hand it back on the " + booking.return_date.to_s %></br>
-                <%= booking.motorcycle.total_price.to_s + "€" %>
+                <%= booking.total_price.to_s + "€" %>
               </div></br>
             </div>
           <% end %>

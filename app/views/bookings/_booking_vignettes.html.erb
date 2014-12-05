@@ -8,7 +8,7 @@
         </br>
         <%= booking.motorcycle.manufacturer + " " + booking.motorcycle.model + ", " + booking.motorcycle.production_year.to_s %></br>
         <%= "Pickup motorcycle at " + booking.motorcycle.pickup_address + ", " + booking.motorcycle.city + " on " + booking.pickup_date.to_s + " and hand it back on the " + booking.return_date.to_s %></br>
-        <%= booking.motorcycle.total_price.to_s + "€" %>
+        <%= booking.total_price.to_s + "€" %>
       </div></br>
     </div>
   <% end %>
