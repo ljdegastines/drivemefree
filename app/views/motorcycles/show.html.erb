@@ -8,7 +8,9 @@
         <h2><%= @motorcycle.manufacturer %>, <%= @motorcycle.model %></h2>
 
         <div class="show-div show-photos">
-          <%#= render 'carousel' %>
+          <% @motorcycle.photos.each do |photo| %>
+            <%= image_tag photo.picture.url(:medium) %>
+          <% end %>
         </div>
 
         <div class="text-center">
