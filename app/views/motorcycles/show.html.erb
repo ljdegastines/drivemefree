@@ -11,6 +11,7 @@
           <% @motorcycle.photos.each do |photo| %>
             <%= image_tag photo.picture.url(:medium) %>
           <% end %>
+          <%#= render 'carousel' %>
         </div>
 
         <div class="text-center">
@@ -18,7 +19,7 @@
             <div class="col-xs-12 col-sm-12 col-md-5">
               <div class="row text-center">
                 <div class="col-xs-6">
-                  photo</br> <%= current_user.first_name %>
+                  photo</br> first_name
                 </div>
                 <div class="col-xs-6">
                   <%= @motorcycle.manufacturer %>, <%= @motorcycle.model %></br>

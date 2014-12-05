@@ -1,7 +1,9 @@
 class MotorcyclesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :get_motorcycle, only: [:show, :edit, :update, :destroy]
 
   def index
+
     @motorcycles = Motorcycle.all
 
     @markers = Gmaps4rails.build_markers(@motorcycle) do |motorcycle, marker|
