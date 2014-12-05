@@ -13,7 +13,7 @@ class Motorcycle < ActiveRecord::Base
   private
 
   def full_address
-    "#{pickup_address}, #{self.zip_code}, #{self.city}"
+    "#{self.pickup_address}, #{self.zip_code}, #{self.city}"
   end
 
 end
