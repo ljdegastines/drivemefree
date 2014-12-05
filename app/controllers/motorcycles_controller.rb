@@ -6,7 +6,7 @@ class MotorcyclesController < ApplicationController
 
     @motorcycles = Motorcycle.all
 
-    @markers = Gmaps4rails.build_markers(@motorcycle) do |motorcycle, marker|
+    @markers = Gmaps4rails.build_markers(@motorcycles) do |motorcycle, marker|
       marker.lat motorcycle.latitude
       marker.lng motorcycle.longitude
     end
@@ -49,6 +49,8 @@ class MotorcyclesController < ApplicationController
   def search
     @motorcycles = Motorcycle.where(search_params.reject{|_, v| v.blank?})
   end
+
+
 
   private
 
