@@ -9,6 +9,6 @@ class UserMailer < ActionMailer::Base
   def welcome(user)
     @user = user
 
-    mail(to: @user.email, subject: 'Welcome ' + @user.first_name + ' to DriveForFree !')
+    mail(to: @user.email, subject: 'Welcome to DriveForFree !')
   end
 end
