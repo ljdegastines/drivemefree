@@ -15,7 +15,8 @@ class MotorcyclesController < ApplicationController
   def show
     @alert_message = "Check that #{@motorcycle.model} !"
     @motorcycle_coordinates = { lat: @motorcycle.latitude, lng: @motorcycle.longitude }
-    @booking = Booking.new
+    @booking = Booking.new(pickup_date: session[:search_params]["start_date"],
+      return_date: session[:search_params]["end_date"])
   end
 
   def new
@@ -47,9 +48,9 @@ class MotorcyclesController < ApplicationController
   end
 
   def search
-
     @motorcycles = Motorcycle.where(search_params.reject{|_, v| v.blank?})
-
+    search_params = {start_date: params[:start_date], end_date: params[:end_date]}
+    session[:search_params] = search_params
   end
 
 
