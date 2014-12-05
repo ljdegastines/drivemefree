@@ -37,15 +37,16 @@
                 </div>
               </div>
               <div class="row booking-content">
+                </br>
                 <%= simple_form_for [@booking], url: motorcycle_bookings_path(@motorcycle) do |f| %>
                   <%= f.hidden_field :motorcycle_id, value: @motorcycle.id %>
                   <div class="col-xs-12 col-sm-12">
                     <div class="row booking-fields">
                       <div class="col-xs-6 col-sm-6">
-                        <%= f.input :pickup_date, as: :string, start_year: Time.now.year - 90, end_year: Time.now.year - 8, order: [:day, :month, :year], placeholder:'dd/mm/yyyy', required: true %>
+                        <%= f.input :pickup_date, as: :string, start_year: Time.now.year - 90, end_year: Time.now.year - 8, order: [:day, :month, :year], placeholder:'dd/mm/yyyy', input_html: { class: 'datepicker' }, required: true %>
                       </div>
                       <div class="col-xs-6 col-sm-6">
-                        <%= f.input :return_date, as: :string, start_year: Time.now.year - 90, end_year: Time.now.year - 8, order: [:day, :month, :year], placeholder:'dd/mm/yyyy', required: true %>
+                        <%= f.input :return_date, as: :string, start_year: Time.now.year - 90, end_year: Time.now.year - 8, order: [:day, :month, :year], placeholder:'dd/mm/yyyy', input_html: { class: 'datepicker' }, required: true %>
                       </div>
                     </div>
                     <div class="row booking-send">
@@ -157,3 +158,24 @@
       });
     })
   </script>
+
+<% content_for(:js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      $('.datepicker').datepicker({
+          format: "dd/mm/yyyy",
+          multidate: false,
+          todayHighlight: true
+      });
+    });
+  <% end %>
+<% end %>
+
+<% content_for(:js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var coord = <%= raw @motorcycle_coordinates %>;
+      alert('Motorcycle coordinates are ' + coord.lat + ', ' + coord.lng);
+    });
+  <% end %>
+<% end %>

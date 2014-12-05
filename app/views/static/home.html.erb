@@ -7,15 +7,15 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-10 col-xs-offset-1">
-          <form action="<%= motorcycles_path %>" class="form-inline">
+          <form action="<%= motorcycles_search_path %>" class="form-inline">
             <div class="form-group">
-              <label for="location"></label>
-              <input type="text" name="location" class="form-control" placeholder="Paris, France">
+              <label for="city"></label>
+              <input type="text" name="city" class="form-control" placeholder="Paris, France">
             </div>
             <div class="input-daterange input-group" id="datepicker">
-                <input type="text" class="input-sm form-control" name="start" placeholder="dd/mm/yyy" />
+                <input type="text" class="input-sm form-control" name="start_date" placeholder="dd/mm/yyy" />
                 <span class="input-group-addon">to</span>
-                <input type="text" class="input-sm form-control" name="end" placeholder="dd/mm/yyy"/>
+                <input type="text" class="input-sm form-control" name="end_date" placeholder="dd/mm/yyy"/>
             </div>
             <input type="submit" value="   Find a motorcycle   " class="btn btn-primary" id="nav-btn">
           </form>
@@ -138,10 +138,16 @@
   </div>
 </div>
 
-<script>
-  $('.input-daterange').datepicker({
-      multidate: false,
-      todayHighlight: true
-  });
-</script>
+<% content_for(:js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function(){
+      $('.input-daterange').datepicker({
+          format: "dd/mm/yyyy",
+          multidate: false,
+          autoclose: true,
+          todayHighlight: true
+      });
+    });
+  <% end %>
+<% end %>
 

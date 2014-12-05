@@ -47,7 +47,11 @@ class MotorcyclesController < ApplicationController
   end
 
   def search
-    @motorcycles = Motorcycle.where(search_params.reject{|_, v| v.blank?})
+    if search_params[:start_date] < search_params[:end_date]
+      @motorcycles = Motorcycle.where(search_params.reject{|_, v| v.blank?})
+    else
+      redirect_to motorcycle_path(@motorcycle)
+    end
   end
 
 
@@ -63,6 +67,6 @@ class MotorcyclesController < ApplicationController
   end
 
   def search_params
-    params.permit(:manufacturer, :model, :style, :production_year, :engine_size, :engine_type, :horsepower, :license_plate, :description, :pickup_address, :longitude, :latitude, :autonomy_km, :picture)
+    params.permit(:manufacturer, :model, :style, :production_year, :engine_size, :engine_type, :horsepower, :license_plate, :description, :pickup_address, :longitude, :latitude, :autonomy_km, :picture, :city)
   end
 end
