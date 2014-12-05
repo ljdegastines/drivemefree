@@ -15,6 +15,7 @@
 //= require jquery-ui
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
+//= require active_admin/base
 //= require underscore
 //= require gmaps/google
 //= require_tree .
